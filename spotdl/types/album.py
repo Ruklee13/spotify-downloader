@@ -48,7 +48,7 @@ class Album(SongList):
         metadata = {
             "name": album_metadata["name"],
             "artist": album_metadata["artists"][0],
-            "year": release_date[:4],
+            "year": album_metadata["release_date"][:4],
             "url": url,
         }
 

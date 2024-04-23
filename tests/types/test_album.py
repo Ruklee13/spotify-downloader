@@ -36,6 +36,13 @@ def test_album_from_url():
     assert album.artist["name"] == "Various Artists"
     assert len(album.songs) == 16
 
+@pytest.mark.vcr()
+def test_album_year_from_url():
+    """
+    Test if album class output correct url
+    """
+    album = Album.from_url("https://open.spotify.com/album/4MQnUDGXmHOvnsWCpzeqWT")
+    assert album.year == "2017"
 
 # @pytest.mark.vcr()
 # def test_album_from_string():
